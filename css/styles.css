@@ -275,7 +275,8 @@ nav h1 a {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
-  color: #666;
+  /* color: #666; */
+  color: blue;
 }
 /* This is the first breakpoint */
 @media screen and (max-width:500px){
