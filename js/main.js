@@ -1,3 +1,14 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/index.js')
+  .then(function(reg) {
+    // registration worked
+    console.log('Registration succeeded. Scope is ' + reg.scope);
+  }).catch(function(error) {
+    // registration failed
+    console.log('Registration failed with ' + error);
+  });
+}
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -198,6 +209,10 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
+
+
+// Register the service worker
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map

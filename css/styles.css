@@ -280,7 +280,17 @@ nav h1 a {
 }
 /* This is the first breakpoint */
 @media screen and (max-width:500px){
-	h1{
-    color: red;
+
+  .filter-options {
+    width: 50%;
+    height: 25px;
+    background-color: purple;
+    align-items: center;
   }
+  #map {
+      height: 200px;
+      width: 50%;
+      background-color: #f3f3f3;
+  }
+
 }
