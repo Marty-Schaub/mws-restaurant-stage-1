@@ -99,22 +99,7 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
-/**
- * Update page and map for current restaurants.
- */
 updateRestaurants = () => {
   const cSelect = document.getElementById('cuisines-select');
   const nSelect = document.getElementById('neighborhoods-select');
@@ -168,11 +153,22 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-
+  const picElm = document.createElement('picture');
+  const pSource = document.createElement('source');
+  const pSource2 = document.createElement('source');
   const image = document.createElement('img');
+  picElm.className = restaurant.name;
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  li.append(image);
+  image.src ="img/" + restaurant.med_photo;
+  image.alt = restaurant.name;
+  pSource.srcset =  DBHelper.imageUrlForRestaurant(restaurant);
+  pSource.media = "(min-width: 650px)";
+  pSource2.srcset = "img/" + restaurant.sm_photo;
+  pSource2.media = "(max-width: 400px)";
+  picElm.append(pSource);
+  picElm.append(pSource2);
+  picElm.append(image);
+  li.append(picElm);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
