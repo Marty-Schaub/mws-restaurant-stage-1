@@ -42,6 +42,9 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 #footer {
   background-color: #444;
@@ -291,40 +294,66 @@ nav h1 a {
     width:100% vw;
     display: flex;
     flex-wrap: wrap;
-    background-color: #f3f3f3;
-    list-style: outside none none;
-    margin: 0;
     padding: 30px 15px 60px 100px ;
     text-align: center;
   }
   #restaurants-list li {
-    background-color: #fff;
-    border: 2px solid #ccc;
-    font-family: Arial,sans-serif;
     margin: 15px;
-    /* min-height: 380px; */
     padding: 0 30px 25px;
     text-align: center;
     width: 25vw;
   }
 
+
+  /* ====================== Restaurant Details ====================== */
+
+  .inside #map-container {
+    height:60vh;
+    top: 25%;
+    width: 50%;
+  }
+
 }
+
+@media screen and (max-width:850px){
+
+  #maincontent {
+    width:100%
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 135px;
+    padding-left: 100px;
+  }
+
+  /*  this from MDN on flexbox layout https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items*/
+  #maincontent :nth-child(1) { order: 1; }
+  #maincontent :nth-child(2) { order: 2; }
+  #maincontent :nth-child(3) { order: 3; }
+
+  .inside #map-container {
+    height:65vh;
+    position:static;
+    width: 70%;
+  }
+}
+
+
 @media screen and (max-width:650px){
 
+
+  #maincontent {
+
+    padding-top: 150px;
+  }
   .filter-options {
-    /* width: 50%; */
     height: 25px;
     background-color: purple;
     align-items: center;
   }
 
-
   #restaurants-list li {
-    background-color: #fff;
-    border: 2px solid #ccc;
-    font-family: Arial,sans-serif;
     margin: 15px;
-    /* min-height: 380px; */
     padding: 0 30px 25px;
     text-align: center;
     width: 50vw;
@@ -332,14 +361,18 @@ nav h1 a {
 
 }
 
+
+@media screen and (max-width:525px){
+  #maincontent {
+    padding-top: 180px;
+    padding-left: 30px;
+  }
+}
+
 @media screen and (max-width:460px){
   /* ====================== Restaurant Filtering ====================== */
 
   .filter-options select {
-    background-color: white;
-    border: 1px solid #fff;
-    font-family: Arial,sans-serif;
-    font-size: 11pt;
     height: 20px;
     letter-spacing: 0;
     margin: 10px;
@@ -349,23 +382,17 @@ nav h1 a {
 /* ============================lists==================== */
   #restaurants-list {
     width:100% vw;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f3f3f3;
-    list-style: outside none none;
     margin: 20px;
     padding: 30px 15px 60px 35px ;
     text-align: center;
   }
 
   #restaurants-list li {
-    background-color: #fff;
-    border: 2px solid #ccc;
-    font-family: Arial,sans-serif;
     margin: 15px;
-    /* min-height: 380px; */
     padding: 0 30px 25px;
     text-align: center;
     width: 50vw;
+  }
+
 
 }

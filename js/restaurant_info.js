@@ -77,7 +77,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const pSrc2 = document.getElementById('restaurant-src2');
   pSrc2.srcset = "img/" + restaurant.sm_photo;
   pSrc2.media = "(max-width: 400px)";
-  console.log(pSrc2);
+
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
