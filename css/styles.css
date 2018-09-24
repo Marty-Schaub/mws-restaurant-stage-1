@@ -43,9 +43,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #f3f3f3;
   min-height: 100%;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
 }
+
 #footer {
   background-color: #444;
   color: #aaa;
@@ -135,6 +134,8 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
+
+
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
@@ -269,7 +270,7 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -288,8 +289,6 @@ nav h1 a {
 /* This is the first breakpoint */
 @media screen and (max-width:1000px){
 
-
-  /* ====================== Restaurant Listing ====================== */
   #restaurants-list {
     width:100% vw;
     display: flex;
@@ -297,6 +296,7 @@ nav h1 a {
     padding: 30px 15px 60px 100px ;
     text-align: center;
   }
+
   #restaurants-list li {
     margin: 15px;
     padding: 0 30px 25px;
@@ -304,32 +304,23 @@ nav h1 a {
     width: 25vw;
   }
 
-
-  /* ====================== Restaurant Details ====================== */
-
   .inside #map-container {
     height:60vh;
     top: 25%;
     width: 50%;
   }
-
 }
 
 @media screen and (max-width:850px){
 
   #maincontent {
-    width:100%
+    width:100%;
     display: flex;
     flex-direction: column;
     align-content: center;
-    padding-top: 135px;
-    padding-left: 100px;
+    /* padding-top: 135px; */
+    /* padding-left: 100px; */
   }
-
-  /*  this from MDN on flexbox layout https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items*/
-  #maincontent :nth-child(1) { order: 1; }
-  #maincontent :nth-child(2) { order: 2; }
-  #maincontent :nth-child(3) { order: 3; }
 
   .inside #map-container {
     height:65vh;
@@ -338,17 +329,10 @@ nav h1 a {
   }
 }
 
-
 @media screen and (max-width:650px){
 
-
-  #maincontent {
-
-    padding-top: 150px;
-  }
   .filter-options {
     height: 25px;
-    background-color: purple;
     align-items: center;
   }
 
@@ -360,15 +344,6 @@ nav h1 a {
   }
 
 }
-
-
-@media screen and (max-width:525px){
-  #maincontent {
-    padding-top: 180px;
-    padding-left: 30px;
-  }
-}
-
 @media screen and (max-width:460px){
   /* ====================== Restaurant Filtering ====================== */
 
