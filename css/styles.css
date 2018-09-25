@@ -342,6 +342,15 @@ nav h1 a {
     text-align: center;
     width: 50vw;
   }
+  #breadcrumb {
+      padding: 10px 40px 16px;
+      list-style: none;
+      background-color: #eee;
+      font-size: 12px;
+      margin: 0;
+      width: calc(50% - 80px);
+  }
+
 
 }
 @media screen and (max-width:460px){

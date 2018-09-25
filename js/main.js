@@ -160,7 +160,7 @@ createRestaurantHTML = (restaurant) => {
   picElm.className = restaurant.name;
   image.className = 'restaurant-img';
   image.src ="img/" + restaurant.med_photo;
-  image.alt = restaurant.name;
+  image.alt = restaurant.alt;
   pSource.srcset =  DBHelper.imageUrlForRestaurant(restaurant);
   pSource.media = "(min-width: 650px)";
   pSource2.srcset = "img/" + restaurant.sm_photo;
@@ -184,6 +184,8 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  more.setAttribute('aria-labelledby', "View Details for the restaurant " + restaurant.name);
+  more.label ='View details for the ' + restaurant.name + 'restaurant.'
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 
